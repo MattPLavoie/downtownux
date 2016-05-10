@@ -11,7 +11,7 @@
       });
   };
 
-  var app = angular.module('app', [
+  window.app = angular.module('app', [
     'ngSanitize',
     'ngRoute'
   ])
@@ -21,12 +21,16 @@
 
   function routingConfig($routeProvider) {
     $routeProvider.
-      when('/about', {
-        templateUrl: 'partials/about.html',
+      when('/home/', {
+        templateUrl: 'partials/home.html',
         controller: 'aboutController'
       }).
+      when('/dux-day/', {
+        templateUrl: 'partials/dux-day.html',
+        controller: 'confController'
+      }).
       otherwise({
-        redirectTo: '/about'
+        redirectTo: '/home'
       });
   }
 
