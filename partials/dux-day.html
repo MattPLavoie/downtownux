@@ -12,39 +12,73 @@
 <nav>
 
   <div class="flex-container">
-    <a href="#">About</a>
-    <a href="#">Location</a>
-    <a href="#">Schedule</a>
-    <a href="#" class="button primary">Get your ticket</a>
+    <a ng-click="scrollTo('about')" href="javascript: ;"><i class="fa fa-map-signs"></i> About</a>
+    <a ng-click="scrollTo('location')" href="javascript: ;"><i class="fa fa-map-marker"></i> Location</a>
+    <a ng-click="scrollTo('schedule')" href="javascript: ;"><i class="fa fa-calendar"></i> Schedule</a>
+    <a href="" class="button primary"><i class="fa fa-ticket"></i> Get your ticket</a>
   </div>
 
 </nav>
 <main>
 
-  <section>
-    <h2>About the Event</h2>
+  <section class='about'>
+    <h2><i class="fa fa-map-signs"></i> About the Event</h2>
     <p>
-      DUX Day is a full day mini-conference. The theme is mastering prototyping tools, and together we will do just that. Learn from experts in the community as they show you what you can do with a plethora of unique prototyping tools, including Invision, Axure and Framer. Make sure you bring your laptop loaded with trials of these tools, because in the afternoon we will break out for workshops where we can pursue the prototyping tools that we are most intrigued by. Get hands on experience creating prototypes with the pros.
+      DUX Day is a full day mini-conference. The theme is mastering prototyping tools, and together we will do just that. Learn from experts in the community as they show you what you can do with a plethora of unique prototyping tools, including Invision, Axure and Framer.
+    </p>
+    <p>
+      Make sure you bring your laptop loaded with trials of these tools, because in the afternoon we will break out for workshops where we can pursue the prototyping tools that we are most intrigued by. Get hands on experience creating prototypes with the pros.
     </p>
   </section>
   <section class="wide flex-container sponsor">
 
     <div>
-      <h3>Sponsored By</h3>
-      <img src="images/TEKsystems.png" class="img-responsive" />
+      <h3><i class="fa fa-beer"></i> Sponsored By</h3>
+      <a href="https://www.teksystems.com/" target="_blank"><img src="images/TEKsystems.png" class="img-responsive" /></a>
       <p>
-        This event is sponsored by TEKsystems who are generously providing coffee in the morning and food for lunch for all attendees. They have been incredible partners for our community and will be available to chat if you'd like to connect with them.
+        This event is sponsored by <a href="https://www.teksystems.com/" target="_blank">TEKsystems</a> who are generously providing coffee in the morning and food for lunch for all attendees. They have been incredible partners for our community and will be available to chat if you'd like to connect with them.
       </p>
     </div>
 
     <div>
-      <h3>Sponsoring</h3>
-      <img src="images/codecraft.gif" class="img-responsive" />
+      <h3><i class="fa fa-heart"></i> Sponsoring</h3>
+      <a href="http://www.codecraftlab.org/" target="_blank"><img src="images/codecraft.gif" class="img-responsive" /></a>
       <p>
-        We are also very happy to be giving back as a community by sponsoring Codecraft Lab. Codecraft Lab is a 501(c)3 non-profit organization that is making a difference in Brevard County by teaching kids how to code. One-hundred percent of the ticket proceeds are going directly to their organization. Thank you for helping us make a difference as a community!
+        We are also very happy to be giving back as a community by sponsoring <a href="http://www.codecraftlab.org/" target="_blank">Codecraft Lab</a>. Codecraft Lab is a 501(c)3 non-profit organization that is making a difference in Brevard County by teaching kids how to code. One-hundred percent of the ticket proceeds are going directly to their organization. Thank you for helping us make a difference as a community!
       </p>
     </div>
 
+  </section>
+
+  <section class="location">
+    <h2><i class="fa fa-map-marker"></i> Location</h2>
+    <p>
+      DUX Day is grateful to our in kind sponsor, <a href="http://www.powerdms.com/" target="_blank">PowerDMS</a>, for graciously allowing us to use their incredible space for this event. PowerDMS is located on the third floor of the exchange building at <a href="https://www.google.com/maps/place/PowerDMS/@28.540923,-81.3834048,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afb79ce59d1:0xec256baa068aa102!8m2!3d28.540923!4d-81.3812161" title="View on Google Maps">101 S Garland Ave #300 Orlando, FL 32801, Orlando, FL</a>.
+    </p>
+  </section>
+
+  <section class="schedule">
+    <h2><i class="fa fa-calendar"></i> Schedule</h2>
+    <div ng-repeat="event in schedule" class="flex-container row"  ng-class-even="'alt'">
+      <time>{{event.time}}</time><span class="description">{{event.description}}</span>
+    </div>
+  </section>
+
+  <section class="ticket">
+    <h2><i class="fa fa-ticket"></i> Get Your Ticket</h2>
+    <p>
+      Still not certain? Feel free to <a href="http://www.meetup.com/Downtown-UX-Meetup/members/?op=leaders">ask us any questions you might have</a>. Attendance will be very limited for this mini-conference so if you are interested in coming, get your ticket as soon as you can. Can’t wait to see you there!
+    </p>
+    <div class="cta">
+      <a href="" class="button primary"><i class="fa fa-ticket"></i> Get your ticket</a>
+    </div>
+  </section>
+
+  <section class="social">
+    <h2><i class="fa fa-twitter"></i> Social</h2>
+    <p>
+      Finally, please feel free to share your excitement about DUX Day or your experience day of by <a href="https://twitter.com/intent/tweet?text=%23duxday" title="Click to start tweeting. We've already got the hashtag in there for you.">tweeting using the hashtag #duxday</a>. And as always, be awesome to each other.
+    </p>
   </section>
 
 </main>
