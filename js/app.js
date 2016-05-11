@@ -35,9 +35,12 @@
   }
 
   function appController($scope, $http, $location) {
-    $scope.$on( "$viewContentLoaded", function() {
-      //TODO: implement GA
-    });
+    if($location.host() == "downtownux.com") {
+      $scope.$on( "$viewContentLoaded", function() {
+        ga('set', 'page', $location.path());
+        ga('send', 'pageview');
+      });
+    }
 
   }
 
