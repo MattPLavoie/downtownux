@@ -36,7 +36,8 @@ p {
   border-radius: 5px;
   padding: 8px 12px;
 }
-.button:hover{
+.button:hover,
+.button:active {
   color: #FFF;
   background:#097BA5;
   text-decoration: none;
@@ -45,7 +46,8 @@ p {
 .button.primary {
   background:#00cc52;
 }
-.button.primary:hover {
+.button.primary:hover,
+.button.primary:active {
   background:#14BF59;
 }
 
@@ -78,6 +80,11 @@ section .flex-container {
     vertical-align: top;
 }
 
+header {
+  background: #BBB;
+  color: #000;
+}
+
 header .shield {
   width: 90px;
 }
@@ -103,6 +110,7 @@ header .title h1 {
 nav {
   background: #DDD;
   padding: 8px 0;
+  z-index: 2;
 }
 
 .sticky header {
@@ -218,6 +226,10 @@ section.ticket .cta {
 
   section .flex-container {
     flex-wrap: wrap;
+  }
+
+  section.schedule .flex-container {
+    flex-wrap: nowrap;
   }
   section .flex-container > div {
     max-width: 100% !important;
