@@ -11,7 +11,32 @@ function confController($scope, $http) {
         orderby: 'time'
       } );
 
-  $scope.scrollTo = function(el) {
-    $('body').animate({ scrollTop: $('.' + el).offset().top }, 600);
+
+  var body = $('body');
+  var nav = $('nav');
+  var header = $('header');
+  var headerHeight = 0, navHeight = 0;
+
+  var resizeHandler = function () {
+    headerHeight = header.outerHeight();
+    navHeight = nav.outerHeight();
+    header.css('border-bottom-width', navHeight);
   };
+
+  resizeHandler();
+
+  $(window).resize(_.throttle(resizeHandler, 60));
+
+  $(document).scroll(_.throttle(function () {
+    if (body.scrollTop() > headerHeight) {
+      body.addClass('sticky');
+    } else {
+      body.removeClass('sticky');
+    }
+  }, 60))
+
+  $scope.scrollTo = function(el) {
+    $('body').animate({ scrollTop: $('.' + el).offset().top - navHeight }, 600);
+  };
+
 }

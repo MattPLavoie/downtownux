@@ -62,6 +62,25 @@ main > section {
   max-width: 800px;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+section .flex-container {
+  align-items: flex-start;
+}
+
+.flex-container > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+header .shield {
+  width: 90px;
+}
 header img {
   width: 90px;
   margin: 12px 12px 12px 0;
@@ -86,28 +105,36 @@ nav {
   padding: 8px 0;
 }
 
+.sticky header {
+    border-bottom: 54px solid transparent;
+}
+
 .sticky nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 }
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+nav .sticky-title {
+  display: none;
 }
 
-.flex-container > div {
-    display: inline-block;
-    max-width: 49%;
-    vertical-align: top;
+nav .sticky-title a {
+  padding: 0 12px;
 }
+nav .sticky-title img {
+  height: 34px;
+}
+
+.sticky nav .sticky-title {
+  display: inline-block;
+}
+
+
 
 nav .flex-container {
-  flex-wrap: nowrap;
   text-align: center;
+  justify-content: space-between;
 }
 nav a {
   display: inline-block;
@@ -119,23 +146,34 @@ main section {
 }
 
 main section p {
-  margin-left: 24px;
+  margin: 12px 24px;
   text-indent: 24px;
   text-align: justify;
 }
 
-section.sponsor h3 {
+section.sponsor .flex-container > div {
+  max-width: 49%;
+}
+section.sponsor h4 {
     text-align: center;
     font-weight: 500;
 }
 
 section.sponsor img {
-  padding: 24px 42px;
+  padding: 24px 60px;
+  margin: 0 auto;
+}
+
+section.location .map {
+  min-width: 30%;
+}
+
+section.location .map img {
+  margin: 0 auto;
 }
 
 section.schedule time {
-    width: 75px;
-    display: inline-block;
+    min-width: 75px;
     color: #999;
     text-align: right;
     margin-right: 20px;
@@ -143,11 +181,6 @@ section.schedule time {
 
 section.schedule .description {
     display: inline-block;
-}
-
-section.schedule .flex-container {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
 }
 
 section.schedule .row {
@@ -158,21 +191,53 @@ section.schedule .row.alt {
   background: #F8F8F8;
 }
 
+section.schedule .row.break .description {
+  color: #ABB3A8;
+}
+section.schedule .row:first-child {
+    border-radius: 6px 6px 0 0;
+}
+
+section.schedule .row:last-child {
+    border-radius: 0 0 6px 6px;
+}
+
 section.ticket .cta {
   text-align: center;
+  margin: 42px 0 0;
 }
 
 @media (max-width: 642px) {
   header .title h1 {
     font-size: 22px;
   }
-  section.sponsor > div {
-    max-width: 100%;
+
+  section .flex-container {
+    flex-wrap: wrap;
+  }
+  section .flex-container > div {
+    max-width: 100% !important;
     width: 100%;
   }
 
-  section.sponsor h3 {
+  section.sponsor h4 {
     text-align: inherit;
+    margin-left: 24px;
   }
 
+  section.sponsor img,
+  section.location img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 535px) {
+  nav .full-text {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .sticky nav .sticky-title {
+    display: none;
+  }
 }

@@ -1,7 +1,10 @@
-<header>
+<header class="header">
 
-  <div>
-    <img src="images/dux-shield.png" />
+  <div class="flex-container">
+    <div class="sheild">
+      <img src="images/dux-shield.png" />
+    </div>
+
     <div class="title">
       <h2>DUX Day</h2>
       <h1>Mastering Prototyping Tools</h1>
@@ -11,11 +14,15 @@
 </header>
 <nav>
 
+
   <div class="flex-container">
+    <div class="sticky-title">
+      <a ng-click="scrollTo('header')" href="javascript: ;"><img src="images/dux-shield.png" title="DUX Day: Mastering Prototyping Tools" /></a>
+    </div>
     <a ng-click="scrollTo('about')" href="javascript: ;"><i class="fa fa-map-signs"></i> About</a>
     <a ng-click="scrollTo('location')" href="javascript: ;"><i class="fa fa-map-marker"></i> Location</a>
     <a ng-click="scrollTo('schedule')" href="javascript: ;"><i class="fa fa-calendar"></i> Schedule</a>
-    <a href="" class="button primary"><i class="fa fa-ticket"></i> Get your ticket</a>
+    <a href="" class="button primary"><i class="fa fa-ticket"></i> <span class="full-text">Get Your</span> Ticket</a>
   </div>
 
 </nav>
@@ -30,44 +37,65 @@
       Make sure you bring your laptop loaded with trials of these tools, because in the afternoon we will break out for workshops where we can pursue the prototyping tools that we are most intrigued by. Get hands on experience creating prototypes with the pros.
     </p>
   </section>
-  <section class="wide flex-container sponsor">
+  <section class="wide sponsor">
+    <div class="flex-container">
+      <div>
+        <h4><i class="fa fa-beer"></i> Sponsored By</h4>
+        <a href="https://www.teksystems.com/" target="_blank"><img src="images/TEKsystems.png" title="Learn more about TEKsystems" class="img-responsive" /></a>
+        <p>
+          This event is sponsored by <a href="https://www.teksystems.com/" target="_blank">TEKsystems</a> who are generously providing coffee in the morning and food for lunch for all attendees. They have been incredible partners for our community and will be available to chat if you'd like to connect with them.
+        </p>
+      </div>
 
-    <div>
-      <h3><i class="fa fa-beer"></i> Sponsored By</h3>
-      <a href="https://www.teksystems.com/" target="_blank"><img src="images/TEKsystems.png" class="img-responsive" /></a>
-      <p>
-        This event is sponsored by <a href="https://www.teksystems.com/" target="_blank">TEKsystems</a> who are generously providing coffee in the morning and food for lunch for all attendees. They have been incredible partners for our community and will be available to chat if you'd like to connect with them.
-      </p>
-    </div>
+      <div>
+        <h4><i class="fa fa-heart"></i> Sponsoring</h4
+        <a href="http://www.codecraftlab.org/" target="_blank"><img src="images/codecraft.gif" title="Learn more about Codecraft Lab" class="img-responsive" /></a>
+        <p>
+          We are also very happy to be giving back as a community by sponsoring <a href="http://www.codecraftlab.org/" target="_blank">Codecraft Lab</a>. Codecraft Lab is a 501(c)3 non-profit organization that is making a difference in Brevard County by teaching kids how to code. One-hundred percent of the ticket proceeds are going directly to their organization. Thank you for helping us make a difference as a community!
+        </p>
+      </div>
 
-    <div>
-      <h3><i class="fa fa-heart"></i> Sponsoring</h3>
-      <a href="http://www.codecraftlab.org/" target="_blank"><img src="images/codecraft.gif" class="img-responsive" /></a>
-      <p>
-        We are also very happy to be giving back as a community by sponsoring <a href="http://www.codecraftlab.org/" target="_blank">Codecraft Lab</a>. Codecraft Lab is a 501(c)3 non-profit organization that is making a difference in Brevard County by teaching kids how to code. One-hundred percent of the ticket proceeds are going directly to their organization. Thank you for helping us make a difference as a community!
-      </p>
     </div>
 
   </section>
 
   <section class="location">
     <h2><i class="fa fa-map-marker"></i> Location</h2>
-    <p>
-      DUX Day is grateful to our in kind sponsor, <a href="http://www.powerdms.com/" target="_blank">PowerDMS</a>, for graciously allowing us to use their incredible space for this event. PowerDMS is located on the third floor of the exchange building at <a href="https://www.google.com/maps/place/PowerDMS/@28.540923,-81.3834048,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afb79ce59d1:0xec256baa068aa102!8m2!3d28.540923!4d-81.3812161" title="View on Google Maps">101 S Garland Ave #300 Orlando, FL 32801, Orlando, FL</a>.
-    </p>
+    <div class="flex-container">
+      <div>
+        <p>
+          DUX Day is grateful to our in kind sponsor, <a href="http://www.powerdms.com/" target="_blank">PowerDMS</a>, for graciously allowing us to use their incredible space for this event.
+
+          PowerDMS is located on the third floor of the exchange building at <a href="https://www.google.com/maps/place/PowerDMS/@28.540923,-81.3834048,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afb79ce59d1:0xec256baa068aa102!8m2!3d28.540923!4d-81.3812161" title="View on Google Maps">101 S Garland Ave #300 Orlando, FL 32801, Orlando, FL</a>.
+        </p>
+      </div>
+      <div class="map">
+        <a href="https://www.google.com/maps/place/PowerDMS/@28.540923,-81.3834048,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afb79ce59d1:0xec256baa068aa102!8m2!3d28.540923!4d-81.3812161" title="View on Google Maps">
+          <img src="images/map.png" class="img-responsive img-rounded" />
+        </a>
+      </div>
+    </div>
+
   </section>
 
   <section class="schedule">
     <h2><i class="fa fa-calendar"></i> Schedule</h2>
-    <div ng-repeat="event in schedule" class="flex-container row"  ng-class-even="'alt'">
+    <div ng-if="!schedule">
+      Loading...
+    </div>
+    <div>
+
+
+    <div ng-repeat="event in schedule" class="flex-container row"  ng-class-even="'alt'" ng-class="{'break':event.break}">
       <time>{{event.time}}</time><span class="description">{{event.description}}</span>
+    </div>
     </div>
   </section>
 
   <section class="ticket">
     <h2><i class="fa fa-ticket"></i> Get Your Ticket</h2>
     <p>
-      Still not certain? Feel free to <a href="http://www.meetup.com/Downtown-UX-Meetup/members/?op=leaders">ask us any questions you might have</a>. Attendance will be very limited for this mini-conference so if you are interested in coming, get your ticket as soon as you can. Can’t wait to see you there!
+      Still not certain? Tickets are only $25 and 100% of it goes to <a href="http://www.codecraftlab.org/" target="_blank">Codecraft Lab</a>. Feel free to <a href="http://www.meetup.com/Downtown-UX-Meetup/members/?op=leaders">ask us any questions you might have</a>. Attendance will be very limited for this mini-conference so if you are interested in coming, get your ticket as soon as you can. Can’t wait to see you there!
     </p>
     <div class="cta">
       <a href="" class="button primary"><i class="fa fa-ticket"></i> Get your ticket</a>
