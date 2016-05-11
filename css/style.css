@@ -43,16 +43,16 @@ p {
 }
 
 .button.primary {
-  background:#44BF10;
+  background:#00cc52;
 }
 .button.primary:hover {
-  background:#40AB12;
+  background:#14BF59;
 }
 
 header > div,
 nav > div,
 main > section {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   padding: 0 12px;
 }
@@ -151,6 +151,10 @@ main section p {
   text-align: justify;
 }
 
+section i {
+  text-indent: initial;
+}
+
 section.sponsor .flex-container > div {
   max-width: 49%;
 }
@@ -231,7 +235,7 @@ section.ticket .cta {
   }
 }
 
-@media (max-width: 535px) {
+@media (max-width: 555px) {
   nav .full-text {
     display: none;
   }

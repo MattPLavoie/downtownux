@@ -30,7 +30,7 @@
         controller: 'confController'
       }).
       otherwise({
-        redirectTo: '/home'
+        redirectTo: '/dux-day/'
       });
   }
 
