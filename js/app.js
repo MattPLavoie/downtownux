@@ -35,7 +35,7 @@
   }
 
   function appController($scope, $http, $location) {
-    if($location.host() == "downtownux.com") {
+    if($location.host() == "www.downtownux.com") {
       $scope.$on( "$viewContentLoaded", function() {
         ga('set', 'page', $location.path());
         ga('send', 'pageview');
