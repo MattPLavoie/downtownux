@@ -86,8 +86,15 @@ section .flex-container {
 }
 
 header {
-  background: #BBB;
-  color: #000;
+  background: url('/images/header.png') center center #999;
+  background-size: cover;
+  color: #FFF;
+  text-shadow: 0px 1px 8px #000;
+}
+
+header .flex-container {
+  min-height: 240px;
+  vertical-align: middle;
 }
 
 header .shield {
@@ -105,11 +112,12 @@ header .title {
 }
 header .title h2 {
   font-weight: 600;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 header .title h1 {
   margin: 0;
+  font-size: 42px;
 }
 header .title h4 {
   margin: 2px 2px 8px;
@@ -130,6 +138,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 nav .sticky-title {
   display: none;
@@ -230,6 +239,7 @@ section.ticket .cta {
 @media (max-width: 642px) {
   header .title h1 {
     font-size: 22px;
+    font-weight: 600;
   }
 
   section .flex-container {
