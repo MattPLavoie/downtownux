@@ -21,6 +21,7 @@
       <a ng-click="scrollTo('header')" href="javascript: ;"><img src="images/dux-shield.png" title="DUX Day: Mastering Prototyping Tools" /></a>
     </div>
     <a ng-click="scrollTo('about')" href="javascript: ;"><i class="fa fa-lightbulb-o"></i> About</a>
+    <a ng-click="scrollTo('speakers')" href="javascript: ;" class="mobile-hide"><i class="fa fa-user"></i> Speakers</a>
     <a ng-click="scrollTo('location')" href="javascript: ;"><i class="fa fa-map-marker"></i> Location</a>
     <a ng-click="scrollTo('schedule')" href="javascript: ;"><i class="fa fa-calendar"></i> Schedule</a>
     <a href="https://www.eventbrite.com/e/dux-day-mastering-prototyping-tools-tickets-25331235407" class="button primary"><i class="fa fa-ticket"></i> <span class="full-text">Get Your</span> Ticket</a>
@@ -60,6 +61,25 @@
 
   </section>
 
+  <section class="speakers">
+    <h2><i class="fa fa-user"></i> Speakers</h2>
+    <div class="flex-container">
+      <div ng-repeat="speaker in schedule" ng-if="speaker.speakerName">
+        <img ng-src="{{speaker.imagePath}}" class="img-responsive img-circle img-framed" />
+        <h3>{{speaker.speakerName}}</h3>
+        <div>
+          <strong>{{speaker.speakerTitle}}</strong>
+        </div>
+        <div>
+          {{speaker.speakerCompany}}
+        </div>
+        <div>
+          <a ng-href="https://twitter.com/{{speaker.twitter}}">@{{speaker.twitter}}</a>
+        </div>
+      </div>
+
+  </section>
+
   <section class="location">
     <h2><i class="fa fa-map-marker"></i> Location</h2>
     <div class="flex-container">
@@ -91,7 +111,11 @@
 
 
     <div ng-repeat="event in schedule" class="flex-container row"  ng-class-even="'alt'" ng-class="{'break':event.break}">
-      <time>{{event.time}}</time><span class="description">{{event.description}}</span>
+      <time>{{event.time}}</time>
+      <span class="description">{{event.description}}
+      <br />
+      <div ng-if="event.speakerName" class="name">{{event.speakerName}}</div>
+      </span>
     </div>
     </div>
   </section>
