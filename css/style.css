@@ -178,10 +178,11 @@ section i {
 
 section.speakers .flex-container {
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 section.speakers .flex-container > div {
   padding: 12px;
+  max-width: 190px;
 }
 section.speakers img {
   max-width: 140px;
@@ -292,5 +293,16 @@ section.ticket .cta {
 @media (max-width: 500px) {
   .sticky nav .sticky-title {
     display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  section.speakers .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.speakers .flex-container > div {
+    max-width: none;
   }
 }
