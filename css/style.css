@@ -176,19 +176,29 @@ section i {
   text-indent: initial;
 }
 
+section.tools p {
+  margin: 0;
+}
+
+section.tools .flex-container {
+  flex-wrap: wrap;
+}
 section.speakers .flex-container {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+section.tools .flex-container > div,
 section.speakers .flex-container > div {
   padding: 12px;
   max-width: 190px;
 }
+section.tools img,
 section.speakers img {
   max-width: 140px;
   margin: 0 auto;
 }
 
+section.tools h3,
 section.speakers h3 {
   text-align: center;
 }
@@ -301,11 +311,13 @@ section.ticket .cta {
 }
 
 @media (max-width: 420px) {
+  section.tools .flex-container,
   section.speakers .flex-container {
     flex-direction: column;
     align-items: center;
   }
 
+  section.tools .flex-container > div,
   section.speakers .flex-container > div {
     max-width: none;
   }
