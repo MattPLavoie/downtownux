@@ -25,6 +25,10 @@
         templateUrl: 'partials/home.html',
         controller: 'aboutController'
       }).
+      when('/dux-day/:section', {
+        templateUrl: 'partials/dux-day.html',
+        controller: 'confController'
+      }).
       when('/dux-day/', {
         templateUrl: 'partials/dux-day.html',
         controller: 'confController'
