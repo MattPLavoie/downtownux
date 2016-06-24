@@ -56,6 +56,14 @@ p {
   background:#14BF59;
 }
 
+.button.out {
+  background:#999;
+}
+.button.out:hover,
+.button.out:active {
+  background:#777;
+}
+
 header > div,
 nav > div,
 main > section {
