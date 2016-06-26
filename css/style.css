@@ -188,17 +188,16 @@ section.tools p {
   margin: 0;
 }
 
-section.tools .flex-container {
-  flex-wrap: wrap;
-}
+section.tools .flex-container,
 section.speakers .flex-container {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-section.tools .flex-container > div,
+section.tools .flex-container > div {
+  padding: 20px 12px;
+}
 section.speakers .flex-container > div {
-  padding: 12px;
-  max-width: 190px;
+  padding: 20px;
 }
 section.tools img,
 section.speakers img {
@@ -303,6 +302,10 @@ section.ticket .cta {
   section.sponsor img,
   section.location img {
     max-width: 80%;
+  }
+
+  .flex-container.fix > div {
+    width: 340px;
   }
 }
 

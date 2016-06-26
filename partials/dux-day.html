@@ -20,9 +20,10 @@
     <div class="sticky-title">
       <a ng-click="scrollTo('header')" href="javascript: ;"><img src="images/dux-shield.png" title="DUX Day: Mastering Prototyping Tools" /></a>
     </div>
-    <a ng-click="scrollTo('downloads')" href="javascript: ;"><i class="fa fa-download"></i> Downloads</a>
+    <a ng-click="scrollTo('speakers')" href="javascript: ;"><i class="fa fa-user"></i> Speakers</a>
+    <a ng-click="scrollTo('tools')" href="javascript: ;"><i class="fa fa-wrench"></i> Tools</a>
     <a ng-click="scrollTo('schedule')" href="javascript: ;"><i class="fa fa-calendar"></i> Schedule</a>
-    <a ng-click="scrollTo('speakers')" href="javascript: ;" class="mobile-hide"><i class="fa fa-user"></i> Speakers</a>
+
     <a ng-click="scrollTo('location')" href="javascript: ;"><i class="fa fa-map-marker"></i> Location</a>
     <a ng-click="scrollTo('about')" href="javascript: ;"><i class="fa fa-lightbulb-o"></i> About</a>
   </div>
@@ -32,42 +33,68 @@
 
 
 
-  <section class="downloads">
-    <h2><i class="fa fa-download"></i> The App Download List</h2>
-    <div style="line-height: 28px;">
-      <i class="fa fa-check-square-o"></i> <a href="https://www.invisionapp.com/" target="_blank">Create an account for InVision</a> (one project free for life)<br>
-      <i class="fa fa-check-square-o"></i> <a href="http://www.axure.com/download" target="_blank">Install Axure</a> (30 day tral)<br>
-      <i class="fa fa-check-square-o"></i> <a href="http://framerjs.com/download/">Install Framer Studio</a> (8 "active" hour trial) if you have a Mac <br>
-      <strong>OR</strong> <a href="http://www.prototypingwithframer.com/framer-on-windows-with-atom/" target="_blank">set up your framer.js environment</a> (free/open source) on your PC<br>
-      <i class="fa fa-check-square-o"></i> <a href="http://www.sketchapp.com/" target="_blank">Install Sketch</a> (14 day trial) if you have a Mac <br>
-      <strong>OR</strong> have your favorite image editing software handy on your PC<br>
-      <i class="fa fa-check-square-o"></i> Get the<a href="https://www.invisionapp.com/craft" target="_blank">Craft</a>, <a href="https://github.com/getflourish/Sketch-Mate">Sketch-Mate</a>, and <a href="https://github.com/rodi01/RenameIt">RenameIt</a> plugins for Sketch and InVision.<br>
-    </div>
+  <section class="thanks">
+    <h2><i class="fa fa-trophy"></i> Thanks!</h2>
+    <p>
+      This was an amazing event, and it was amazing because you made it great. We are the community that comprises us, that comes out every month, that teaches and learns from each other. And because of that, we are doing amazing things. <strong>Thank you for being a part of this community!</strong>
+    </p>
+    <p>
+      We want to extend an extra special thanks to all of our speakers. You can find them all on twitter by following the links below. You will also find their presentations and workshop materials posted below as well.
+    </p>
+    <p>
+      We also want to thank TEKsystems Digital for providing the food and drinks for the day. And finally thanks to the prototyping tools, who all contributed swag and licenses for us to give away at the event.
+    </p>
+    <p>
+      Check out <a href="https://twitter.com/search?q=%23DUXDay" target="_blank">#DUXDay</a> on twitter to see some great pictures and share your favorite moments from the day.
+    </p>
   </section>
 
-  <section class="workshops">
-    <h2><i class="fa fa-archive"></i> Workshop Files</h2>
-    <div style="line-height: 28px;">
-      <i class="fa fa-file-archive-o"></i> <a href="http://www.downtownux.com/sketch_invision_worskhip_files.zip" target="_blank">InVision/Sketch Workshop Files</a><br>
-      <i class="fa fa-file-o"></i> <a href="http://www.downtownux.com/workshop.rp" target="_blank">Axure Workshop Files</a><br>
-      <i class="fa fa-github"></i> <a href="https://github.com/paulhershey/DUX-Day/tree/master/Paul-Hershey" target="_blank">Framer Workshop Files</a><br>
-    </div>
-  </section>
 
-  <section class="workshops">
-    <h2><i class="fa fa-user"></i> Presentations</h2>
-    <div style="line-height: 28px;">
-      <i class="fa fa-desktop"></i> <a href="http://www.downtownux.com/presentations/CroyBosch-WhyWePrototype.pdf" target="_blank">Croy Bosch: A prototyping mindset - what we need to unlearn</a><br>
-      <i class="fa fa-desktop"></i> <a href="http://www.downtownux.com/presentations/Prototyping_Invision.zip" target="_blank">Tommy Hung: Invision Session</a><br>
-      <i class="fa fa-desktop"></i> <a href="http://www.downtownux.com/presentations/PaulHershey-FramerTalk.pdf" target="_blank">Paul Hershey: Framer Session</a><br>
-      More presentations will be up soon.
+  <section class="speakers">
+    <h2><i class="fa fa-user"></i> Speakers &amp; Materials</h2>
+    <div class="flex-container">
+      <div ng-repeat="speaker in schedule" ng-if="speaker.speakerName">
+        <img ng-src="{{speaker.imagePath}}" class="img-responsive img-circle img-framed" />
+        <h3>{{speaker.speakerName}}</h3>
+        <div>
+          <strong>{{speaker.speakerTitle}}</strong>
+        </div>
+        <div>
+          {{speaker.speakerCompany}}
+        </div>
+        <div>
+          <a ng-href="https://twitter.com/{{speaker.twitter}}" target="_blank">@{{speaker.twitter}}</a>
+        </div>
+      </div>
     </div>
+    <div class="flex-container fix">
+      <div>
+        <h4><i class="fa fa-desktop"></i> Presentations</h4>
+        <div style="line-height: 28px;">
+          <i class="fa fa-file-pdf-o"></i> <a href="http://www.downtownux.com/presentations/CroyBosch-WhyWePrototype.pdf" target="_blank">Croy Bosch: A prototyping mindset</a><br>
+          <i class="fa fa-file-pdf-o"></i> <span title="Check back soon!">Jean Kaluza: Starting with Paper</span><br>
+          <i class="fa fa-file-pdf-o"></i> <a href="http://www.downtownux.com/presentations/TommyHung-Invision.pdf" target="_blank">Tommy Hung: Invision Session</a><br>
+          <i class="fa fa-file-pdf-o"></i> <a href="http://www.downtownux.com/presentations/NikWilliamson-Axure.pdf" target="_blank">Nik Williamson: Axure Session</a><br>
+          <i class="fa fa-file-pdf-o"></i> <a href="http://www.downtownux.com/presentations/PaulHershey-Framer.pdf" target="_blank">Paul Hershey: Framer Session</a><br>
+        </div>
+      </div>
+      <div>
+        <h4><i class="fa fa-archive"></i> Workshop Files</h4>
+        <p>
+
+        </p>
+        <div style="line-height: 28px;">
+          <i class="fa fa-file-archive-o"></i> <a href="http://www.downtownux.com/workshops/sketch_invision_worskhip_files.zip" target="_blank">InVision/Sketch Workshop Files</a><br>
+          <i class="fa fa-file-picture-o"></i> <a href="http://www.downtownux.com/workshops/axure-workshop.rp" target="_blank">Axure Workshop Files</a><br>
+          <i class="fa fa-github"></i> <a href="https://github.com/paulhershey/DUX-Day/tree/master/Paul-Hershey" target="_blank">Framer Workshop Files</a><br>
+        </div>
+      </div>
   </section>
 
   <section class="tools">
-    <h2><i class="fa fa-wrench"></i> More About the Prototyping Tools</h2>
+    <h2><i class="fa fa-wrench"></i> The Prototyping Tools</h2>
     <p>
-      To participate in the workshops, you will need to bring a laptop with the prototyping tools installed. Please use the links below to install each of the tools you would like to work with.
+      For the workshops, we used the following tools. Thank you to all of the companies for contributing licesnes for our giveaway! You can find the app download checklist for the day below as well.
     </p>
     <div class="flex-container">
       <div>
@@ -75,36 +102,15 @@
           <img src="images/invision-logo.png" class="img-responsive" />
         </a>
         <h3>InVision</h3>
-        <div>
-          <a href="https://www.invisionapp.com/" target="_blank">Create your account</a><br />
-          <em>Trial:</em> One Project, free forever.
-          <br /><br />
-          InVision has contributed a 3 month Pro License we will be giving away!
-        </div>
 
       </div>
       <div>
         <a href="http://www.axure.com/download" target="_blank"><img src="images/axure-logo.png" class="img-responsive" /></a>
         <h3>Axure</h3>
-        <div>
-          <a href="http://www.axure.com/download" target="_blank">Download Axure</a><br />
-          <em>Trial:</em> 30 Days
-          <br /><br />
-
-          Axure has contributed an Axure RP Pro License we will be giving away!
-        </div>
       </div>
       <div>
         <a href="http://framerjs.com/download/"><img src="images/framer-logo.png" class="img-responsive" /></a>
         <h3>Framer</h3>
-        <div>
-          <a href="http://framerjs.com/download/">Download Framer</a><br />
-          <em>Trial:</em> 8 "active" hours
-          <br /><br />
-          If you don't have a Mac or prefer to just use the js library, <a href="http://www.prototypingwithframer.com/framer-on-windows-with-atom/" target="_blank">here are instructions</a>.
-          <br /><br />
-          Framer has contributed a Full License we will be giving away!
-        </div>
       </div>
 
       <div>
@@ -112,22 +118,26 @@
           <img src="images/sketch-logo.png" class="img-responsive" />
         </a>
         <h3>Sketch</h3>
-        <div>
-          You can use InVision with any image editing software, but we will be using it with Sketch.
-          <br /><br />
-          <a href="http://www.sketchapp.com/" target="_blank">Download Sketch</a><br />
-          <em>Trial:</em> 14 Days<br />
-          *Available only for Macs
-        </div>
 
       </div>
+    </div>
 
+    <h4><i class="fa fa-download"></i> The App Download Checkist</h2>
+    <div style="line-height: 28px;">
+      <i class="fa fa-check-square-o"></i> <a href="https://www.invisionapp.com/" target="_blank">Create an account for InVision</a> (one project free for life)<br>
+      <i class="fa fa-check-square-o"></i> <a href="http://www.axure.com/download" target="_blank">Install Axure</a> (30 day tral)<br>
+      <i class="fa fa-check-square-o"></i> <a href="http://framerjs.com/download/">Install Framer Studio</a> (8 "active" hour trial) if you have a Mac <br>
+      <strong>OR</strong> <a href="http://www.prototypingwithframer.com/framer-on-windows-with-atom/" target="_blank">set up your framer.js environment</a> (free/open source) on your PC<br>
+      <i class="fa fa-check-square-o"></i> <a href="http://www.sketchapp.com/" target="_blank">Install Sketch</a> (14 day trial) if you have a Mac <br>
+      <strong>OR</strong> have your favorite image editing software handy on your PC<br>
+      <i class="fa fa-check-square-o"></i> Get the <a href="https://www.invisionapp.com/craft" target="_blank">Craft</a>, <a href="https://github.com/getflourish/Sketch-Mate">Sketch-Mate</a>, and <a href="https://github.com/rodi01/RenameIt">RenameIt</a> plugins for Sketch and InVision.<br>
+    </div>
   </section>
 
   <section class="schedule">
     <h2><i class="fa fa-calendar"></i> Schedule</h2>
     <p>
-      DUX Day is on <strong>Saturday, June 25th, 2016</strong>. <a href="https://twitter.com/DowntownUX" target="_blank">Follow us on Twitter</a> to stay up to date with any announcements or schedule changes.
+      DUX Day was on <strong>Saturday, June 25th, 2016</strong>.
     </p>
     </p>
     <div ng-if="!schedule">
@@ -146,34 +156,17 @@
     </div>
   </section>
 
-  <section class="speakers">
-    <h2><i class="fa fa-user"></i> Speakers</h2>
-    <div class="flex-container">
-      <div ng-repeat="speaker in schedule" ng-if="speaker.speakerName">
-        <img ng-src="{{speaker.imagePath}}" class="img-responsive img-circle img-framed" />
-        <h3>{{speaker.speakerName}}</h3>
-        <div>
-          <strong>{{speaker.speakerTitle}}</strong>
-        </div>
-        <div>
-          {{speaker.speakerCompany}}
-        </div>
-        <div>
-          <a ng-href="https://twitter.com/{{speaker.twitter}}" target="_blank">@{{speaker.twitter}}</a>
-        </div>
-      </div>
 
-  </section>
 
   <section class="location">
     <h2><i class="fa fa-map-marker"></i> Location</h2>
     <div class="flex-container">
       <div>
         <p>
-          DUX Day is being hosted at the <a href="http://www.powerdms.com/" target="_blank">PowerDMS</a> office.
+          Thank you to <a href="http://www.powerdms.com/" target="_blank">PowerDMS</a> for providing the space for DUX Day. It was an incredible place for the event.
         </p>
         <p>
-          <strong>Enter through the Pine Street doors and head up to the third floor</strong> of the Church Street Exchange building. The address is <a href="https://www.google.com/maps/place/PowerDMS/@28.540923,-81.3834048,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afb79ce59d1:0xec256baa068aa102!8m2!3d28.540923!4d-81.3812161" title="View on Google Maps" target="_blank">101 S Garland Ave #300 Orlando, FL 32801, Orlando, FL</a>.
+          PowerDMS is located at <a href="https://www.google.com/maps/place/PowerDMS/@28.540923,-81.3834048,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afb79ce59d1:0xec256baa068aa102!8m2!3d28.540923!4d-81.3812161" title="View on Google Maps" target="_blank">101 S Garland Ave #300 Orlando, FL 32801, Orlando, FL</a>.
         </p>
       </div>
       <div class="map">
@@ -186,27 +179,17 @@
   </section>
 
 
-
-  <section class="ticket">
-    <h2><i class="fa fa-ticket"></i> Register</h2>
-    <p>
-      Still not certain? Tickets are only $25 and 100% of it goes to <a href="http://www.codecraftlab.org/" target="_blank">Codecraft Lab</a>. Feel free to <a href="http://www.meetup.com/Downtown-UX-Meetup/members/?op=leaders">ask us any questions you might have</a>. Attendance will be very limited for this mini-conference so if you are interested in coming, get your ticket as soon as you can. We're looking forward to seeing you there!
-    </p>
-    <div class="cta">
-      <a href="https://www.eventbrite.com/e/dux-day-mastering-prototyping-tools-tickets-25331235407" class="button out"><i class="fa fa-ticket"></i> Sold Out</a>
-    </div>
-  </section>
-
   <section class="social">
     <h2><i class="fa fa-twitter"></i> Social</h2>
     <p>
-      Follow us on Twitter to stay in the know with important updates: <a href="https://twitter.com/DowntownUX" target="_blank">@DowntownUX</a>.
+      Follow us on Twitter to stay to see what we are up to <a href="https://twitter.com/DowntownUX" target="_blank">@DowntownUX</a>.
     </p>
     <p>
-      Please feel free to share your excitement about DUX Day or your experience the day of by <a href="https://twitter.com/intent/tweet?text=%23DUXDay" title="Click to start tweeting. We've already got the hashtag in there for you." target="_blank">tweeting using the hashtag #DUXDay</a>. And as always, be awesome to each other.
+      Relive the moments and share your favorites on twitter by checking out <a href="https://twitter.com/search?q=%23DUXDay" target="_blank">#DUXDay</a>. And as always, be awesome to each other.
     </p>
 
   </section>
+
 
   <section class='about'>
     <h2><i class="fa fa-lightbulb-o"></i> About the Event</h2>
@@ -238,6 +221,18 @@
     </div>
 
   </section>
+
+  <section class="ticket">
+    <h2><i class="fa fa-ticket"></i> Register</h2>
+    <p>
+      Still not certain? Tickets are only $25 and 100% of it goes to <a href="http://www.codecraftlab.org/" target="_blank">Codecraft Lab</a>. Feel free to <a href="http://www.meetup.com/Downtown-UX-Meetup/members/?op=leaders">ask us any questions you might have</a>. Attendance will be very limited for this mini-conference so if you are interested in coming, get your ticket as soon as you can. We're looking forward to seeing you there!
+    </p>
+    <div class="cta">
+      <a href="https://www.eventbrite.com/e/dux-day-mastering-prototyping-tools-tickets-25331235407" class="button out"><i class="fa fa-ticket"></i> Sold Out</a>
+    </div>
+  </section>
+
+
 
   <section class="dux">
     <h2><i class="fa fa-home"></i> Downtown UX</h2>
