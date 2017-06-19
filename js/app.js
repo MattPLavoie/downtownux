@@ -29,12 +29,19 @@
         templateUrl: 'partials/dux-day.html',
         controller: 'confController'
       }).
-      when('/dux-day/', {
+      when('/dux-day-2017/', {
+        templateUrl: 'partials/dux-day-2017.html',
+        controller: 'confController'
+      }).
+      when('/dux-day-2016/', {
         templateUrl: 'partials/dux-day.html',
         controller: 'confController'
       }).
+      when('/dux-day/', {
+        redirectTo: '/dux-day-2017/'
+      }).
       otherwise({
-        redirectTo: '/dux-day/'
+        redirectTo: '/dux-day-2017/'
       });
   }
 

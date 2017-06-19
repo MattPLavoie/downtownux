@@ -21,11 +21,13 @@ function confController($scope, $http, $routeParams) {
   var nav = $('nav');
   var header = $('header');
   var headerHeight = 0, navHeight = 0;
+  var addedHeight = 0;
 
   var resizeHandler = function () {
     headerHeight = header.outerHeight();
     navHeight = nav.outerHeight();
     header.css('border-bottom-width', navHeight);
+    $('.nav-spacer').css('height', navHeight);
   };
 
   resizeHandler();
