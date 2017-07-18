@@ -1,5 +1,11 @@
 app.controller('confController', ['$scope', '$http', '$routeParams', confController]);
 
+var api = {
+    schedule2016: "13vt27jO41_sjDlpjatEvWkEtx-Ri4GvaqUGfIEJ7Gck",
+    schedule2017: "",
+    speakers2017: "19LcgW5N-RNC3uCY3N-yx3fPb9ljsOiobFV_04GrTifY"
+};
+
 function confController($scope, $http, $routeParams) {
   if (!$scope.schedule) {
     Tabletop.init( {
@@ -15,6 +21,19 @@ function confController($scope, $http, $routeParams) {
           orderby: 'time'
         } );
     }
+
+    if (!$scope.speakers2017) {
+      Tabletop.init( {
+            key: api.speakers2017,
+            callback: function(data, tabletop) {
+              $scope.speakers2017 = data;
+              $scope.$digest();
+            },
+            simpleSheet: true,
+            orderby: 'time'
+          } );
+      }
+
 
 
   var body = $('body');

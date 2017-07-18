@@ -82,7 +82,7 @@ p {
 header > div,
 nav > div,
 main > section {
-  max-width: 680px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 12px;
 }
@@ -148,7 +148,7 @@ header .title h4 {
 }
 
 nav {
-  background: #DDD;
+  background: #EEE;
   padding: 8px 0;
   z-index: 2;
   text-align: center;
@@ -189,6 +189,7 @@ nav .sticky-title img {
 nav a {
   display: inline-block;
   padding: 8px 12px;
+  font-weight: bold;
 }
 
 main section {
@@ -227,8 +228,16 @@ section.speakers img {
 }
 
 section.tools h3,
-section.speakers h3 {
+section.speakers .flex-container {
   text-align: center;
+}
+
+section.speakers h3 {
+    font-weight: bold;
+}
+
+section.speakers .speaker-title {
+    max-width: 200px;
 }
 
 section.sponsor .flex-container > div {

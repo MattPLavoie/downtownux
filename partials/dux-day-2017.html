@@ -32,23 +32,20 @@
 
   <section class="speakers">
     <h2><i class="fa fa-user"></i> Speakers</h2>
+    <div ng-show="!speakers2017">
+        Loading...
+    </div>
     <div class="flex-container">
-        Speaker information will be available shortly!
-
-
-      <!-- <div ng-repeat="speaker in schedule" ng-if="speaker.speakerName">
+        <div ng-repeat="speaker in speakers2017" ng-if="speaker.speakerName">
         <img ng-src="{{speaker.imagePath}}" class="img-responsive img-circle img-framed" />
         <h3>{{speaker.speakerName}}</h3>
-        <div>
-          <strong>{{speaker.speakerTitle}}</strong>
+        <div class="speaker-title">
+          {{speaker.speakerTitle}}
         </div>
         <div>
-          {{speaker.speakerCompany}}
+          <a ng-href="https://twitter.com/{{speaker.twitter}}" target="_blank" ng-show="speaker.twitter">@{{speaker.twitter}}</a>
         </div>
-        <div>
-          <a ng-href="https://twitter.com/{{speaker.twitter}}" target="_blank">@{{speaker.twitter}}</a>
-        </div>
-      </div> -->
+      </div>
     </div>
   </section>
 
