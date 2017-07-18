@@ -198,7 +198,6 @@ main section {
 
 main section p {
   margin: 12px 24px;
-  text-indent: 24px;
   text-align: justify;
 }
 
@@ -232,8 +231,30 @@ section.speakers .flex-container {
   text-align: center;
 }
 
-section.speakers h3 {
+section.speakers h3,
+section.schedule17 h3  {
     font-weight: bold;
+}
+
+section.schedule17 .workshop {
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 47%;
+    background: #EEE;
+}
+
+section.schedule17 .button {
+    margin: 0 auto 24px;
+    text-align: center;
+    display: block;
+    max-width: 112px;
+}
+
+section.schedule17 .flex-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 section.speakers .speaker-title {
@@ -348,7 +369,8 @@ header.dd17 a.down:hover {
     flex-wrap: nowrap;
   }
   section.sponsor .flex-container > div,
-  section.location .flex-container > div {
+  section.location .flex-container > div,
+  section.schedule17 .flex-container > div {
     max-width: 100% !important;
     width: 100%;
   }
