@@ -24,8 +24,31 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
+h2 {
+    color: #757575;
+}
+
+.fa {
+    padding-right: 6px;
+}
+h2 .fa {
+        font-size: 80%;
+}
+
 p {
   margin: 14px 0;
+}
+
+a {
+    color: #3780d2;
+}
+
+a:hover, a:focus {
+    color: #ca4392;
+}
+
+img.full-width {
+    width: 100%;
 }
 
 .img-framed {
@@ -57,7 +80,8 @@ p {
   padding: 8px 12px;
 }
 .button:hover,
-.button:active {
+.button:active,
+.button:focus {
   color: #FFF;
   background:#097BA5;
   text-decoration: none;
@@ -67,7 +91,8 @@ p {
   background:#00cc52;
 }
 .button.primary:hover,
-.button.primary:active {
+.button.primary:active,
+.button.primary:focus {
   background:#14BF59;
 }
 
@@ -234,6 +259,7 @@ section.speakers .flex-container {
 section.speakers h3,
 section.schedule17 h3  {
     font-weight: bold;
+    color: #ca4392;
 }
 
 section.schedule17 .workshop {
@@ -273,6 +299,19 @@ section h4 {
 section.sponsor img {
   padding: 24px 60px;
   margin: 0 auto;
+}
+
+section.sponsor .venu-sponsor  {
+    max-width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+}
+section.sponsor .venu-sponsor img {
+    padding: 16px;
+}
+
+section.sponsor .sponsoring img {
+    padding: 0;
 }
 
 section.location .map {
@@ -375,10 +414,6 @@ header.dd17 a.down:hover {
     width: 100%;
   }
 
-  section.sponsor h4 {
-    text-align: inherit;
-    margin-left: 24px;
-  }
 
   section.sponsor img,
   section.location img {
