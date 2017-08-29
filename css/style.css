@@ -112,11 +112,6 @@ main > section {
   padding: 0 12px;
 }
 
-
-.wide {
-  max-width: 800px;
-}
-
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
@@ -311,41 +306,45 @@ section.location .map img {
   margin: 0 auto;
 }
 
-section.schedule .flex-container {
+section.schedule .flex-container,
+section.schedule17 .scheduleDisplay .flex-container {
   align-items: flex-start;
   justify-content: flex-start;
 }
-section.schedule time {
+section.schedule time,
+section.schedule17 .scheduleDisplay time {
     min-width: 75px;
     color: #999;
     text-align: right;
     margin-right: 20px;
 }
 
-section.schedule .description {
+section.schedule .description,
+section.schedule17 .scheduleDisplay .description {
     display: inline-block;
 }
 
-section.schedule .name {
+section.schedule .name,
+section.schedule17 .scheduleDisplay .name {
   color: #999;
 }
 
-section.schedule .row {
-  background: #FFF;
+.row {
+  background: #EEE;
   padding: 8px;
 }
-section.schedule .row.alt {
+.row.alt {
   background: #F8F8F8;
 }
 
-section.schedule .row.break .description {
+.row.break .description {
   color: #ABB3A8;
 }
-section.schedule .row:first-child {
+.row:first-child {
     border-radius: 6px 6px 0 0;
 }
 
-section.schedule .row:last-child {
+.row:last-child {
     border-radius: 0 0 6px 6px;
 }
 

@@ -2,7 +2,7 @@ app.controller('confController', ['$scope', '$http', '$routeParams', confControl
 
 var api = {
     schedule2016: "13vt27jO41_sjDlpjatEvWkEtx-Ri4GvaqUGfIEJ7Gck",
-    schedule2017: "",
+    schedule2017: "1RaaU5_pf6fv9ORfM5_utZVM2wUAmQzJGZE-I7uNcQxA",
     speakers2017: "19LcgW5N-RNC3uCY3N-yx3fPb9ljsOiobFV_04GrTifY"
 };
 
@@ -27,12 +27,26 @@ function confController($scope, $http, $routeParams) {
             key: api.speakers2017,
             callback: function(data, tabletop) {
               $scope.speakers2017 = data;
+              console.log(data);
               $scope.$digest();
             },
             simpleSheet: true,
             orderby: 'time'
           } );
       }
+
+      if (!$scope.schedule2017) {
+        Tabletop.init( {
+              key: api.schedule2017,
+              callback: function(data, tabletop) {
+                $scope.schedule2017 = data;
+                console.log(data);
+                $scope.$digest();
+              },
+              simpleSheet: true,
+              orderby: 'time'
+            } );
+        }
 
 
 

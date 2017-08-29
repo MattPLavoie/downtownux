@@ -56,7 +56,19 @@
     <h1><i class="fa fa-calendar"></i> Schedule</h1>
     <p>
       DUX Day will be held on <strong>Saturday, September 9th, 2017</strong>. This year's schedule will include inspiring speakers and the choice of one focused workshop. Coffee and light fare will be provided in the morning, as well as lunch in the afternoon.
-  </p><p>
+  </p>
+
+      <div class="scheduleDisplay">
+
+          <div ng-repeat="event in schedule2017" class="flex-container row"  ng-class-even="'alt'" ng-class="{'break':event.break}">
+            <time>{{event.time}}</time>
+            <span class="description">{{event.description}}
+            <br />
+            <div ng-if="event.speakerName" class="name">{{event.speakerName}}</div>
+
+          </div>
+     </div>
+<p>
       <strong>Choose one of these workshops when you purchase your ticket.</strong>
     </p>
     <div class="flex-container">
